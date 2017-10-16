@@ -12,6 +12,7 @@ Page({
         avatar: '../../asset/avatar/male.png',
         name: '张三',
         age: 28,
+        gender: '男',
         desc: '岁月在我脸上留下了不灭的痕迹，而我却什么也没有留下。',
         phone: '13182762105',
         update: '10-13'
@@ -20,6 +21,7 @@ Page({
         avatar: '../../asset/avatar/male.png',
         name: '李四',
         age: 32,
+        gender: '男',
         desc: '三年以上电焊经验，熟练掌握鱼鳞焊等工艺，吃苦耐劳 . .',
         phone: '13182762105',
         update: '10-12'
@@ -28,6 +30,7 @@ Page({
         avatar: '../../asset/avatar/male.png',
         name: '王五',
         age: 32,
+        gender: '男',
         desc: '三年以上电焊经验，熟练掌握鱼鳞焊等工艺，吃苦耐劳 . .',
         phone: '13182762105',
         update: '10-12'

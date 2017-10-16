@@ -10,7 +10,7 @@
           <text class='name'>{{name}}</text>
         </view>
         <view>
-          <text class='age'>{{age}}岁</text>
+          <text class='age'>{{gender}}/{{age}}岁</text>
         </view>
       </view>
       <text class='desc'>{{desc}}</text>
