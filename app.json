@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/square/square",
+    "pages/mine/mine"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#c61a2b",
+    "navigationBarTitleText": "求职通",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#a9b7b7",
+    "selectedColor": "#e6292e",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "机会",
+        "iconPath": "asset/icon/home.png",
+        "selectedIconPath": "asset/icon/home2.png"
+      },
+      {
+        "pagePath": "pages/square/square",
+        "text": "广场",
+        "iconPath": "asset/icon/square.png",
+        "selectedIconPath": "asset/icon/square2.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "asset/icon/mine.png",
+        "selectedIconPath": "asset/icon/mine2.png"
+      }
+    ]
+  }
+}

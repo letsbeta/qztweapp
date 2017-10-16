@@ -1,0 +1,31 @@
+.item {
+  display: flex;
+  flex-direction: row;
+}
+
+.item .item-icon {
+  height: 60rpx;
+  width: 60rpx;
+}
+
+.item .text-container {
+  vertical-align: middle;
+  width: 80%;
+}
+
+.item .item-text {
+  font-size: 28rpx;
+  text-align: center;
+  padding-left: 30rpx;
+}
+
+.item .arrow-container {
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+}
+
+.item .arrow {
+  width: 30rpx;
+  height: 30rpx;
+}

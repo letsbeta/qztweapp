@@ -1,0 +1,58 @@
+<!--pages/mine/mine.wxml-->
+<import src="../../template/serviceItem.wxml"/>
+
+<scroll-view>
+  <view class='profile'>
+    <image wx:if="{{userInfo.avatarUrl}}" class="userinfo-avatar" src="{{userInfo.avatarUrl}}">
+    </image>
+
+    <view class='col2'>
+      <text class='name'>{{userInfo.nickName}}</text>
+      <text class='phone'>电话：未知 年龄：未知</text>
+    </view>
+    <view class='col3'>
+      <navigator url=''>
+        <image src="../../asset/btn/editprofile.png" style='width: 40rpx; height: 40rpx;'></image>
+      </navigator>
+
+    </view>
+  </view>
+
+
+  <view class='service-container'>
+
+    <template is="serviceItem" data="{{icon: '../../asset/btn/shenqing.png', name: '我的申请'}}">
+    </template>
+    <view class='divider'></view>
+
+    <template is="serviceItem" data="{{icon: '../../asset/btn/zhiding.png', name: '提升排名'}}">
+    </template>
+    <view class='divider'></view>
+
+    <template is="serviceItem" data="{{icon: '../../asset/btn/todo.png', name: '待办事项'}}">
+    </template>
+    <view class='divider'></view>
+
+    <template is="serviceItem" data="{{icon: '../../asset/btn/yuangong.png', name: '我的员工'}}">
+    </template>
+    <view class='divider'></view>
+
+    <template is="serviceItem" data="{{icon: '../../asset/btn/zhigong.png', name: '我的职工'}}">
+    </template>
+    <view class='divider'></view>
+
+    <template is="serviceItem" data="{{icon: '../../asset/btn/kehu.png', name: '我的客户'}}">
+    </template>
+    <view class='divider'></view>
+
+    <template is="serviceItem" data="{{icon: '../../asset/btn/qiye.png', name: '企业入住'}}">
+    </template>
+    <view class='divider'></view>
+
+    <template is="serviceItem" data="{{icon: '../../asset/btn/about.png', name: '关于程序'}}">
+    </template>
+    <view class='divider'></view>
+
+  </view>
+
+</scroll-view>

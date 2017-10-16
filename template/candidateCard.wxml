@@ -1,0 +1,23 @@
+<template name="candidateCard">
+  <view class='card'>
+    <view class='avatar-container'>
+      <image class='avatar' src="{{avatar}}"></image>
+    </view>
+
+    <view class='body'>
+      <view class='first-line'>
+        <view style='width: 80%'>
+          <text class='name'>{{name}}</text>
+        </view>
+        <view>
+          <text class='age'>{{age}}岁</text>
+        </view>
+      </view>
+      <text class='desc'>{{desc}}</text>
+      <view class='footer'>
+        <view style='width: 80%'><text class='tel'>电话: {{phone}}</text></view>
+        <view><text class='update'>{{update}}</text></view>
+      </view>
+    </view>
+  </view>
+</template>

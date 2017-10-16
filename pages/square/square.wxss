@@ -1,0 +1,27 @@
+/* pages/square/square.wxss */
+
+@import "../../template/candidateCard.wxss";
+
+.candidate {
+  background-color: white;
+}
+
+.candidate .divider {
+  margin-left: 20rpx;
+  height: 1rpx;
+  margin-top: 10rpx;
+  margin-right: 20rpx;
+  background-color: #e0e0e0;
+}
+
+.loadmore {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rpx;
+}
+
+.loadmore .content {
+  font-size: 20rpx;
+  color: lightgray;
+  text-align: center;
+}

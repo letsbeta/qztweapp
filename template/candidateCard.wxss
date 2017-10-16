@@ -1,0 +1,68 @@
+/* pages/square/square.wxss */
+
+.card {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.card .avatar .avatar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.card .body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .body .first-line {
+  display: flex;
+  flex-direction: row;
+}
+
+.card .body .name {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  font-size: 31rpx;
+}
+
+.card .body .age {
+  font-size: 24rpx;
+  color: lightgray;
+}
+
+.card .body .desc {
+  color: gray;
+  font-size: 25rpx;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  margin-right: 20rpx;
+}
+
+.card .body .tel {
+  color: rgb(71, 177, 248);
+  font-size: 22rpx;
+  margin-top: 5rpx;
+  margin-left: 20rpx;
+}
+
+.card .body .footer {
+  display: flex;
+  flex-direction: row;
+}
+
+.card .body .footer .update {
+  font-size: 22rpx;
+  color: lightgray;
+}

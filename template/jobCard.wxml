@@ -1,0 +1,25 @@
+<template name="jobCard">
+  <view class='card'>
+    <view class='card-job-title'>
+      <view class='left'>
+        <text class='name'>{{company}}</text>
+      </view>
+      <view class='right'>
+        <text class='salary'>{{salaryMin}} - {{salaryMax}}元</text>
+      </view>
+    </view>
+    <view class='card-job-type'>
+      <text class='job-name'>{{jobName}}  /  {{city}}-{{district}}</text>
+    </view>
+    <view class='card-job-desc'>
+      <text class='desc'>{{desc}}</text>
+    </view>
+    <view class='card-job-footer'>
+      <view class='left'>
+        <text class='pub'>{{by}} @ {{date}}</text>
+        <text class='tel'>{{tel}}</text>
+      </view>
+      <button size='mini' type='primary' plain='true'>申请</button>
+    </view>
+  </view>
+</template>

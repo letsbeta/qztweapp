@@ -1,0 +1,11 @@
+<template name="serviceItem">
+    <view class='item'>
+      <image src='{{icon}}' class='item-icon'></image>
+      <view class='text-container'>
+        <text class='item-text'>{{name}}</text>
+      </view>
+      <view class='arrow-container'>
+        <image src='../../asset/btn/arrow-right.png' class='arrow'></image>
+      </view>
+    </view>
+</template>

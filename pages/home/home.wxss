@@ -1,0 +1,7 @@
+/* pages/home/home.wxss */
+@import "../../template/jobCard.wxss";
+
+.img {
+  width: 100%;
+  height: 300rpx;
+}
