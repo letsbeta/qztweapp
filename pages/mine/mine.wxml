@@ -11,10 +11,9 @@
       <text class='phone'>电话：未知 年龄：未知</text>
     </view>
     <view class='col3'>
-      <navigator url=''>
+      <navigator url='/pages/personinfo/personinfo'>
         <image src="../../asset/btn/editprofile.png" style='width: 40rpx; height: 40rpx;'></image>
       </navigator>
-
     </view>
   </view>
 

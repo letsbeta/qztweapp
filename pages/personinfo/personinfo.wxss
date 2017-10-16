@@ -1,0 +1,65 @@
+/* pages/personinfo/personinfo.wxss */
+
+.tipsCard {
+  border: 1rpx solid #e0e0e0;
+  border-radius: 0rpx;
+  box-shadow: 5rpx 5rpx 5rpx #e0e0e0;
+  margin: 10rpx;
+}
+
+.tipsCard .content {
+  font-size: 28rpx;
+  color: rgb(44, 47, 58);
+  padding: 15rpx;
+}
+
+.form-container {
+  margin-top: 50rpx;
+  border: 1rpx solid #e0e0e0;
+}
+
+.form-container .cell {
+  margin: 20rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #e0e0e0;
+  vertical-align: middle;
+}
+
+.label-font {
+  font-size: 30rpx;
+  color: rgb(19, 121, 189);
+  width: 25%;
+}
+
+.input-font {
+  font-size: 30rpx;
+  color: rgb(44, 47, 58);
+}
+
+.input-placeholder {
+  font-size: 30rpx;
+  color: lightgray;
+}
+
+.form-container .cell:last-child {
+  border-bottom: 0rpx;
+}
+
+.form-container .cell .vertical-align {
+  display: flex;
+  flex-direction: column;
+}
+
+.noicon-check{
+    position: absolute;
+    left: -9999px;
+}
+
+.check-text-with-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+
