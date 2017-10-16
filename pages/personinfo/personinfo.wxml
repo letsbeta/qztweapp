@@ -8,12 +8,12 @@
   <view class='form-container'>
     <view class='cell'>
       <text class='label-font'>姓名</text>
-      <input class='input-font' placeholder='请输入姓名' placeholder-class='input-placeholder'></input>
+      <input class='input-font' placeholder='请输入姓名' placeholder-class='input-placeholder' maxlength='4'></input>
     </view>
 
     <view class='cell'>
-      <text class='label-font'>手机号</text>
-      <input type="number" class='input-font' placeholder='请输入手机号' placeholder-class='input-placeholder'></input>
+      <text class='label-font'>手机</text>
+      <input type="number" class='input-font' placeholder='请输入手机号' placeholder-class='input-placeholder' maxlength='11'></input>
     </view>
 
     <view class='cell'>
