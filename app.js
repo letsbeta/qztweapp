@@ -11,6 +11,22 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         console.log(res);
+        wx.request({
+          url: 'https://qzt.letsbeta.com/api/wxlogin',
+          method: 'POST',
+          data: {
+            'code': res.code
+          },
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success: res => {
+            console.log(res);
+          },
+          fail: res => {
+            console.log(res);
+          }
+        })
       }
     })
     // 获取用户信息
