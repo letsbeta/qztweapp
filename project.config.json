@@ -10,6 +10,7 @@
 	"libVersion": "1.5.4",
 	"appid": "wx2394a55a588a27c1",
 	"projectname": "%E6%B1%82%E8%81%8C%E9%80%9A",
+	"miniprogramRoot": "./",
 	"condition": {
 		"weapp": {
 			"current": -1,
