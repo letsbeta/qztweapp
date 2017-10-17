@@ -24,6 +24,7 @@
   flex-direction: row;
   border-bottom: 1rpx solid #e0e0e0;
   vertical-align: middle;
+  padding-bottom: 10rpx;
 }
 
 .label-font {
@@ -62,4 +63,7 @@
   justify-content: flex-start;
 }
 
+.btn-area {
+  margin: 50rpx;
+}
 

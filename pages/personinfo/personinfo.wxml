@@ -5,36 +5,47 @@
   </view>
 
   <!--信息录入表单-->
-  <view class='form-container'>
-    <view class='cell'>
-      <text class='label-font'>姓名</text>
-      <input class='input-font' placeholder='请输入姓名' placeholder-class='input-placeholder' maxlength='4'></input>
+  <form bindsubmit='bindSubmitClick'>
+    <view class='form-container'>
+      <view class='cell'>
+        <text class='label-font'>姓名</text>
+        <input class='input-font' placeholder='请输入姓名' placeholder-class='input-placeholder' maxlength='4'></input>
+      </view>
+
+      <view class='cell'>
+        <text class='label-font'>手机</text>
+        <input type="number" class='input-font' placeholder='请输入手机号' placeholder-class='input-placeholder' maxlength='11'></input>
+      </view>
+
+      <view class='cell'>
+        <text class='label-font'>生日</text>
+        <picker mode="date" value="1980-01-01" start="1950-01-01" end="2050-12-31" bindchange="bindDateChange">
+          <view class="input-font">1980-01-01</view>
+        </picker>
+      </view>
+
+      <view class='cell'>
+        <text class='label-font'>性别</text>
+        <radio-group bindchange="radioChange">
+          <label class='vertical-align' wx:for="{{genders}}">
+            <radio class="noicon-check" value="{{item.name}}" checked="{{item.checked}}" />
+            <view class='check-text-with-icon'>
+              <text space='emsp' class='input-font'>{{item.value+appendSpace}}</text>
+              <icon wx:if="{{item.checked}}" type="success_no_circle" size="16"></icon>
+            </view>
+          </label>
+        </radio-group>
+      </view>
+
+      <view class='cell'>
+        <text class='label-font'>简介</text>
+        <textarea style='height: 200rpx;' maxlength='50' placeholder='自我介绍，比如工作经历，擅长的技能等。50字以内' placeholder-class='input-placeholder'></textarea>
+      </view>
+
     </view>
 
-    <view class='cell'>
-      <text class='label-font'>手机</text>
-      <input type="number" class='input-font' placeholder='请输入手机号' placeholder-class='input-placeholder' maxlength='11'></input>
+    <view class='btn-area'>
+      <button form-type='submit' type='primary' plain='true'>提交</button>
     </view>
-
-    <view class='cell'>
-      <text class='label-font'>生日</text>
-      <picker mode="date" value="1980-01-01" start="1950-01-01" end="2050-12-31" bindchange="bindDateChange">
-        <view class="input-font">1980-01-01</view>
-      </picker>
-    </view>
-
-    <view class='cell'>
-      <text class='label-font'>性别</text>
-      <radio-group bindchange="radioChange">
-        <label class='vertical-align' wx:for="{{genders}}">
-          <radio class="noicon-check" value="{{item.name}}" checked="{{item.checked}}" />
-          <view class='check-text-with-icon'>
-            <text space='emsp' class='input-font'>{{item.value+appendSpace}}</text>
-            <icon wx:if="{{item.checked}}" type="success_no_circle" size="16"></icon>
-          </view>
-        </label>
-      </radio-group>
-    </view>
-
-  </view>
+  </form>
 </view>
