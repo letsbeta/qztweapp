@@ -10,7 +10,7 @@ Page({
       { name: '男', value: '1', checked: true },
       { name: '女', value: '2', checked: false }
     ],
-    appendSpace: '        '
+    appendSpace: ' '.repeat(8)
   
   },
 
