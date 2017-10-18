@@ -30,6 +30,7 @@ App({
     })
     // 获取用户信息
     wx.getUserInfo({
+      lang: 'zh_CN',
       success: res => {
         // 可以将 res 发送给后台解码出 unionId
         this.globalData.userInfo = res.userInfo

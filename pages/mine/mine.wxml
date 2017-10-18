@@ -32,6 +32,10 @@
     </template>
     <view class='divider'></view>
 
+    <template is="serviceItem" data="{{icon: '../../asset/btn/job.png', name: '职位管理'}}">
+    </template>
+    <view class='divider'></view>
+
     <template is="serviceItem" data="{{icon: '../../asset/btn/yuangong.png', name: '我的员工'}}">
     </template>
     <view class='divider'></view>
