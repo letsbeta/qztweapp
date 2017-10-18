@@ -7,8 +7,8 @@ Page({
   data: {
 
     genders: [
-      { name: '男', value: '男', checked: true },
-      { name: '女', value: '女', checked: false }
+      { name: '男', value: '1', checked: true },
+      { name: '女', value: '2', checked: false }
     ],
     appendSpace: '        '
   

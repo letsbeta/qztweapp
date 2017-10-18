@@ -28,9 +28,9 @@
         <text class='label-font'>性别</text>
         <radio-group bindchange="radioChange">
           <label class='vertical-align' wx:for="{{genders}}">
-            <radio class="noicon-check" value="{{item.name}}" checked="{{item.checked}}" />
+            <radio class="noicon-check" value="{{item.value}}" checked="{{item.checked}}" />
             <view class='check-text-with-icon'>
-              <text space='emsp' class='input-font'>{{item.value+appendSpace}}</text>
+              <text space='emsp' class='input-font'>{{item.name+appendSpace}}</text>
               <icon wx:if="{{item.checked}}" type="success_no_circle" size="16"></icon>
             </view>
           </label>
