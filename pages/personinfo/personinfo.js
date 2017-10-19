@@ -82,4 +82,13 @@ Page({
       genders: genders
     });
   },
+
+  /**
+   * form submit
+   */
+
+  doSubmit: function(e) {
+    console.log('///////////////////');
+    console.log(e.detail.value);
+  }
 })

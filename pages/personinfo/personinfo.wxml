@@ -5,28 +5,28 @@
   </view>
 
   <!--信息录入表单-->
-  <form bindsubmit='bindSubmitClick'>
+  <form bindsubmit='doSubmit'>
     <view class='form-container'>
       <view class='cell'>
         <text class='label-font'>姓名</text>
-        <input class='input-font' placeholder='请输入姓名' placeholder-class='input-placeholder' maxlength='4'></input>
+        <input name="name" class='input-font' placeholder='请输入姓名' placeholder-class='input-placeholder' maxlength='4'></input>
       </view>
 
       <view class='cell'>
         <text class='label-font'>手机</text>
-        <input type="number" class='input-font' placeholder='请输入手机号' placeholder-class='input-placeholder' maxlength='11'></input>
+        <input name="phone" type="number" class='input-font' placeholder='请输入手机号' placeholder-class='input-placeholder' maxlength='11'></input>
       </view>
 
       <view class='cell'>
         <text class='label-font'>生日</text>
-        <picker mode="date" value="1980-01-01" start="1950-01-01" end="2050-12-31" bindchange="bindDateChange">
+        <picker name="birthday" mode="date" value="1980-01-01" start="1950-01-01" end="2050-12-31" bindchange="bindDateChange">
           <view class="input-font">1980-01-01</view>
         </picker>
       </view>
 
       <view class='cell'>
         <text class='label-font'>性别</text>
-        <radio-group bindchange="radioChange">
+        <radio-group name="gender" bindchange="radioChange">
           <label class='vertical-align' wx:for="{{genders}}">
             <radio class="noicon-check" value="{{item.value}}" checked="{{item.checked}}" />
             <view class='check-text-with-icon'>
@@ -39,7 +39,7 @@
 
       <view class='cell'>
         <text class='label-font'>简介</text>
-        <textarea style='height: 200rpx;' maxlength='50' placeholder='自我介绍，比如工作经历，擅长的技能等。50字以内' placeholder-class='input-placeholder'></textarea>
+        <textarea name="intro" class="input-font" style='height: 200rpx;' maxlength='50' placeholder='自我介绍，比如工作经历，擅长的技能等。50字以内' placeholder-class='input-placeholder'></textarea>
       </view>
 
     </view>
