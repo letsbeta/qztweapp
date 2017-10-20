@@ -13,7 +13,10 @@ Page({
     extraInfo: {
       phone: '13182762105',
       age: 33
-    }
+    },
+    name: '未知',
+    phone: '未知',
+    age: '未知'
   
   },
 
@@ -21,7 +24,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
     
   },
 
@@ -39,7 +41,14 @@ Page({
     this.setData({
       userInfo: app.globalData.userInfo
     });
-    console.log(this.data.userInfo);
+    //console.log(this.data.userInfo);
+    var dbUser = wx.getStorageSync('dbUserInfo') || {};
+    console.log(this.data.userInfo.nickName);
+    var name = dbUser.name ? dbUser.name : this.data.userInfo.nickName;
+    this.setData({
+      name: name,
+      phone: (dbUser.phone ? dbUser.phone : this.data.phone)
+    })
   },
 
   /**

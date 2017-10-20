@@ -1,7 +1,7 @@
 <!--pages/home/home.wxml-->
 <import src="../../template/jobCard.wxml"/>
 
-<scroll-view>
+<view class='page'>
   <view>
     <swiper indicator-dots="true" autoplay="true" circular="true">
       <block wx:for="{{imgUrls}}">
@@ -17,4 +17,4 @@
   </template>
 </block>
 
-</scroll-view>
+</view>

@@ -7,8 +7,8 @@
     </image>
 
     <view class='col2'>
-      <text class='name'>{{userInfo.nickName}}</text>
-      <text class='phone'>电话：未知 年龄：未知</text>
+      <text class='name'>{{name}}</text>
+      <text class='phone'>电话：{{phone}} 年龄：{{age}}</text>
     </view>
     <view class='col3'>
       <navigator url='/pages/personinfo/personinfo'>
