@@ -41,6 +41,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    endpoint: 'https://qzt.letsbeta.com'
+    endpoint: common.endpoint
   }
 })
