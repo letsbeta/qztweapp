@@ -1,6 +1,7 @@
 // pages/home/home.js
 //获取应用实例
 const app = getApp();
+const common = require('../../utils/util.js');
 
 Page({
 
@@ -8,12 +9,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    endpoint: app.globalData.endpoint,
+    endpoint: common.endpoint,
 
     imgUrls: [
-      {id: 1, url: app.globalData.endpoint + '/static/banner/aimabanner.jpg'},
-      {id: 2, url: app.globalData.endpoint + '/static/banner/xinribanner.jpg'},
-      {id: 3, url: app.globalData.endpoint + '/static/banner/yadibanner.jpg'}
+      { id: 1, url: common.endpoint + '/static/banner/aimabanner.jpg'},
+      { id: 2, url: common.endpoint + '/static/banner/xinribanner.jpg'},
+      { id: 3, url: common.endpoint + '/static/banner/yadibanner.jpg'}
     ],
 
     jobs: [

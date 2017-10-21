@@ -40,7 +40,6 @@ App({
     });
   },
   globalData: {
-    userInfo: null,
-    endpoint: common.endpoint
+    userInfo: null
   }
 })
