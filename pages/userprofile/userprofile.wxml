@@ -1,4 +1,4 @@
-<!--pages/personinfo/personinfo.wxml-->
+<!--pages/userprofile/userprofile.wxml-->
 <view class='page'>
   <view class='tipsCard'>
     <text class='content'>以下信息为企业联系您的唯一凭据，请务必确保信息真实有效！自我介绍为选填内容，但是提供简单的自我介绍可以帮助企业更好的了解您的情况，以提高被录用的几率。</text>

@@ -1,4 +1,4 @@
-// pages/personinfo/personinfo.js
+// pages/userprofile/userprofile.js
 const app = getApp();
 
 const common = require('../../utils/util.js');

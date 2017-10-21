@@ -3,7 +3,7 @@
     "pages/home/home",
     "pages/square/square",
     "pages/mine/mine",
-    "pages/personinfo/personinfo"
+    "pages/userprofile/userprofile"
   ],
   "window": {
     "backgroundTextStyle": "light",

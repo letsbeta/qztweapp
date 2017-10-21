@@ -11,7 +11,7 @@
       <text class='phone'>电话：{{phone}} 年龄：{{age}}</text>
     </view>
     <view class='col3'>
-      <navigator url='/pages/personinfo/personinfo'>
+      <navigator url='/pages/userprofile/userprofile'>
         <image src="../../asset/btn/editprofile.png" style='width: 40rpx; height: 40rpx;'></image>
       </navigator>
     </view>

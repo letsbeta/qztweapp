@@ -1,4 +1,4 @@
-/* pages/personinfo/personinfo.wxss */
+/* pages/userprofile/userprofile.wxss */
 
 .tipsCard {
   border: 1rpx solid #e0e0e0;
