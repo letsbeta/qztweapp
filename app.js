@@ -1,4 +1,6 @@
 //app.js
+const common = require('./utils/util.js');
+
 App({
   onLaunch: function () {
     // 登录
@@ -6,24 +8,17 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         console.log(res);
-        wx.request({
-          url: this.globalData.endpoint+'/api/wxlogin',
-          method: 'POST',
-          data: {
-            'code': res.code
-          },
-          header: {
-            'content-type': 'application/json', // 默认值
-            'X-App-Key': this.globalData.secretKey
-          },
-          success: res => {
-            console.log(res.data);
-            if (res.statusCode == 200) {
-              wx.setStorageSync('openid', res.data);  //保存openid到本地storage
-            }
-          },
-          fail: res => {
-            console.log(res);
+        common.post('/api/wxlogin', {'code': res.code}).then(res => {
+          console.log(res.data);
+          if (res.statusCode == 200) {
+            wx.setStorageSync('openid', res.data);  //保存openid到本地storage
+            //获取数据库中用户的详细信息
+            common.get('/api/getuser/'+res.data.openid+'/').then(res => {
+              if (res.statusCode == 200) {
+                console.log('save dbUserInfo to local storage');
+                wx.setStorageSync('dbUserInfo', res.data);
+              }
+            })
           }
         })
       }

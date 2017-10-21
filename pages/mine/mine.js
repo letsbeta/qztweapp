@@ -43,7 +43,6 @@ Page({
     });
     //console.log(this.data.userInfo);
     var dbUser = wx.getStorageSync('dbUserInfo') || {};
-    console.log(this.data.userInfo.nickName);
     var name = dbUser.name ? dbUser.name : this.data.userInfo.nickName;
     this.setData({
       name: name,

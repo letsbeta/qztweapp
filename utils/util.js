@@ -25,6 +25,31 @@ function extend2(jsonarray) {
   return resultJsonObject;
 };
 
+function get(url) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: endpoint+url,
+      method: 'GET',
+      header: headers,
+      success: resolve,
+      fail: reject
+    });
+  })
+}
+
+function post(url, data) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: endpoint + url,
+      method: 'POST',
+      header: headers,
+      data: data,
+      success: resolve,
+      fail: reject
+    });
+  })
+}
+
 function showToast(msg) {
   return new Promise((resolve, reject) => {
     wx.showToast({
@@ -56,6 +81,8 @@ module.exports = {
   endpoint: endpoint,
   headers: headers,
   extend: extend2,
+  get: get,
+  post: post,
   showToast: showToast,
   showConfirm: showConfirm
 }
