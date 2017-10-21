@@ -41,7 +41,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    endpoint: 'https://qzt.letsbeta.com',
-    secretKey: 'itisreallyhard2guess!'
+    endpoint: 'https://qzt.letsbeta.com'
   }
 })

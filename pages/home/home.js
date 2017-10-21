@@ -11,13 +11,14 @@ Page({
     endpoint: app.globalData.endpoint,
 
     imgUrls: [
-      app.globalData.endpoint + '/static/banner/aimabanner.jpg',
-      app.globalData.endpoint + '/static/banner/xinribanner.jpg',
-      app.globalData.endpoint + '/static/banner/yadibanner.jpg'
+      {id: 1, url: app.globalData.endpoint + '/static/banner/aimabanner.jpg'},
+      {id: 2, url: app.globalData.endpoint + '/static/banner/xinribanner.jpg'},
+      {id: 3, url: app.globalData.endpoint + '/static/banner/yadibanner.jpg'}
     ],
 
     jobs: [
       {
+        id: 1,
         company: '安能物流',
         salaryMin: 4000,
         salaryMax: 6000,
@@ -30,6 +31,7 @@ Page({
         date: '2017-10-13'
       },
       {
+        id: 2,
         company: '绿点精密厂',
         salaryMin: 5000,
         salaryMax: 8000,
@@ -42,6 +44,7 @@ Page({
         date: '2017-10-12'
       },
       {
+        id: 3,
         company: '绿点塑胶厂',
         salaryMin: 5000,
         salaryMax: 8000,
@@ -54,6 +57,7 @@ Page({
         date: '2017-10-11'
       },
       {
+        id: 4,
         company: '绿点塑胶厂',
         salaryMin: 5000,
         salaryMax: 8000,

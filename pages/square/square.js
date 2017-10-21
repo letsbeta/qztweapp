@@ -9,6 +9,7 @@ Page({
     inputVal: "",
     persons: [
       {
+        id: 1,
         avatar: '../../asset/avatar/male.png',
         name: '张三',
         age: 28,
@@ -18,6 +19,7 @@ Page({
         update: '10-13'
       },
       {
+        id: 2,
         avatar: '../../asset/avatar/male.png',
         name: '李四',
         age: 32,
@@ -27,6 +29,7 @@ Page({
         update: '10-12'
       },
       {
+        id: 3,
         avatar: '../../asset/avatar/male.png',
         name: '王五',
         age: 32,

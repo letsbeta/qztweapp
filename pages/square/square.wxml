@@ -25,7 +25,7 @@
     <view class='candidate'>
       <!--候选人卡片-->
 
-      <block wx:for="{{persons}}">
+      <block wx:for="{{persons}}" wx:key="id">
         <template is="candidateCard" data="{{...item}}">
         </template>
         <view class='divider'></view>
