@@ -1,7 +1,8 @@
 const endpoint = 'https://qzt.letsbeta.com';
 const headers = {
   'content-type': 'application/json', // 默认值
-  'X-App-Key': 'itisreallyhard2guess!'
+  'X-App-Key': 'itisreallyhard2guess!',
+  'Accept': 'application/json'
 };
 
 function extend(jsonbject1, jsonbject2) {
