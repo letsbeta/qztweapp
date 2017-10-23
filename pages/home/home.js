@@ -12,9 +12,9 @@ Page({
     endpoint: common.endpoint,
 
     imgUrls: [
-      { id: 1, url: common.endpoint + '/static/banner/aimabanner.jpg'},
-      { id: 2, url: common.endpoint + '/static/banner/xinribanner.jpg'},
-      { id: 3, url: common.endpoint + '/static/banner/yadibanner.jpg'}
+      { id: 1, url: common.endpoint + '/resource/banner/aimabanner.jpg'},
+      { id: 2, url: common.endpoint + '/resource/banner/xinribanner.jpg'},
+      { id: 3, url: common.endpoint + '/resource/banner/yadibanner.jpg'}
     ],
 
     jobs: [
