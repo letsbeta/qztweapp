@@ -10,13 +10,13 @@
           <text class='name'>{{name}}</text>
         </view>
         <view>
-          <text class='age'>{{gender}}/{{age}}岁</text>
+          <text class='age'>{{gender == 1 ? '男' : '女'}}/{{age}}岁</text>
         </view>
       </view>
-      <text class='desc'>{{desc}}</text>
+      <text class='desc'>{{intro}}</text>
       <view class='footer'>
         <view style='width: 80%'><text class='tel'>电话: {{phone}}</text></view>
-        <view><text class='update'>{{update}}</text></view>
+        <view><text class='update'>{{update_at}}</text></view>
       </view>
     </view>
   </view>

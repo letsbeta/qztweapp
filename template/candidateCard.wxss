@@ -24,6 +24,7 @@
 .card .body {
   display: flex;
   flex-direction: column;
+  width: 85%;
 }
 
 .card .body .first-line {
@@ -47,7 +48,7 @@
   font-size: 25rpx;
   margin-left: 20rpx;
   margin-top: 10rpx;
-  margin-right: 20rpx;
+  margin-right: 10rpx;
 }
 
 .card .body .tel {

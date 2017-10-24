@@ -26,6 +26,34 @@ function extend2(jsonarray) {
   return resultJsonObject;
 };
 
+//将2017-10-11T11:00:00这种格式转化成10-11
+function truncTime(t) {
+  var time_str = t.split('T')[0].split('-');
+  var ti = time_str[1] + '-' + time_str[2];
+  //console.log(ti);
+  return ti;
+}
+
+//提示网络异常
+function promptNetworkIssue() {
+  wx.showToast({
+    title: '网络异常',
+    icon: 'loading',
+    duration: 3000,
+    mask: true
+  });
+}
+
+//提示网络异常
+function promptNetworkNotConnect() {
+  wx.showToast({
+    title: '没有网络',
+    icon: 'loading',
+    duration: 3000,
+    mask: true
+  });
+}
+
 function get(url) {
   return new Promise((resolve, reject) => {
     wx.request({
@@ -51,17 +79,6 @@ function post(url, data) {
   })
 }
 
-function showToast(msg) {
-  return new Promise((resolve, reject) => {
-    wx.showToast({
-      title: msg,
-      duration: 3000,
-      success: resolve,
-      fail: reject
-    })
-  })
-}
-
 function showConfirm(msg, goback) {
   return new Promise((resolve, reject) => {
     wx.showModal({
@@ -82,8 +99,10 @@ module.exports = {
   endpoint: endpoint,
   headers: headers,
   extend: extend2,
+  truncTime: truncTime,
+  promptNetworkIssue: promptNetworkIssue,
+  promptNetworkNotConnect: promptNetworkNotConnect,
   get: get,
   post: post,
-  showToast: showToast,
   showConfirm: showConfirm
 }

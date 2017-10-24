@@ -44,9 +44,11 @@ Page({
     //console.log(this.data.userInfo);
     var dbUser = wx.getStorageSync('dbUserInfo') || {};
     var name = dbUser.name ? dbUser.name : this.data.userInfo.nickName;
+    var age = dbUser.age ? dbUser.age : this.data.age;
     this.setData({
       name: name,
-      phone: (dbUser.phone ? dbUser.phone : this.data.phone)
+      phone: (dbUser.phone ? dbUser.phone : this.data.phone),
+      age: age
     })
   },
 

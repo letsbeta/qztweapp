@@ -13,7 +13,7 @@ App({
           if (res.statusCode == 200) {
             wx.setStorageSync('openid', res.data);  //保存openid到本地storage
             //获取数据库中用户的详细信息
-            common.get('/api/getuser/'+res.data.openid+'/').then(res => {
+            common.get('/api/user/'+res.data.openid+'/').then(res => {
               if (res.statusCode == 200) {
                 console.log('save dbUserInfo to local storage');
                 wx.setStorageSync('dbUserInfo', res.data);

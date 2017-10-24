@@ -1,4 +1,6 @@
 // pages/square/square.js
+const common = require('../../utils/util.js');
+
 Page({
 
   /**
@@ -7,6 +9,8 @@ Page({
   data: {
     inputShowed: false,
     inputVal: "",
+    next: "",
+    default_intro: "岁月在我脸上留下了不灭的痕迹，而我却什么也没有留下。",
     persons: [
       {
         id: 1,
@@ -14,9 +18,9 @@ Page({
         name: '张三',
         age: 28,
         gender: '男',
-        desc: '岁月在我脸上留下了不灭的痕迹，而我却什么也没有留下。',
+        intro: '岁月在我脸上留下了不灭的痕迹，而我却什么也没有留下。',
         phone: '13182762105',
-        update: '10-13'
+        update_at: '10-13'
       },
       {
         id: 2,
@@ -24,9 +28,9 @@ Page({
         name: '李四',
         age: 32,
         gender: '男',
-        desc: '三年以上电焊经验，熟练掌握鱼鳞焊等工艺，吃苦耐劳 . .',
+        intro: '三年以上电焊经验，熟练掌握鱼鳞焊等工艺，吃苦耐劳 . .',
         phone: '13182762105',
-        update: '10-12'
+        update_at: '10-12'
       },
       {
         id: 3,
@@ -34,16 +38,16 @@ Page({
         name: '王五',
         age: 32,
         gender: '男',
-        desc: '三年以上电焊经验，熟练掌握鱼鳞焊等工艺，吃苦耐劳 . .',
+        intro: '三年以上电焊经验，熟练掌握鱼鳞焊等工艺，吃苦耐劳 . .',
         phone: '13182762105',
-        update: '10-12'
+        update_at: '10-12'
       }
     ]
   
   },
 
   /**
-   * 自定义函数
+   * 自定义函数，searchBar使用这些函数
    */
   showInput: function () {
     this.setData({
@@ -75,10 +79,52 @@ Page({
 
 
   /**
+   * 页面加载和下拉刷新时调用，回去最新的用户信息
+   * q: query string: ?offset=10
+   */
+
+  fetchLatestUserInfo: function (q, append=false) {
+    common.get('/api/users'+q).then(res => {
+      if (res.statusCode == 200) {
+        var users = res.data.users;
+        var next = res.data.next;
+        for (var i = 0; i < users.length; i++) {
+          var update_at = common.truncTime(users[i].update_at);
+          users[i].update_at = update_at;
+          if (users[i].intro.length == 0) {
+            users[i].intro = this.data.default_intro;
+          }
+        }
+        console.log(users);
+        this.setData({
+          next: next
+        });
+        if (append) {
+          this.setData({
+            persons: this.data.persons.concat(users)
+          })
+        }
+        else {
+          this.setData({
+            persons: users
+          })
+        }
+      }
+      else {
+        console.log('get user list failed');
+        common.promptNetworkIssue();
+      }
+    }).catch(res => {
+      common.promptNetworkNotConnect();
+    });
+  },
+
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log('square loaded');
+    this.fetchLatestUserInfo('');
   },
 
   /**
@@ -113,6 +159,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    console.log('pull down refresh triggered.');
+    this.fetchLatestUserInfo('');
+    wx.stopPullDownRefresh();
   
   },
 
@@ -120,7 +169,10 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    console.log("bottom is reached.");
+    if (this.data.next.length != 0) {
+      this.fetchLatestUserInfo(this.data.next, true);
+    }
   },
 
   /**

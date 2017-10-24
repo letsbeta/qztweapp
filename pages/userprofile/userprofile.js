@@ -133,7 +133,7 @@ Page({
       return;
     }
 
-    common.post('/api/adduser', data).then(res => {
+    common.post('/api/user', data).then(res => {
       if (res.statusCode == 200) {
         console.log(res.data);
         wx.setStorageSync('dbUserInfo', res.data);
