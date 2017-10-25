@@ -1,5 +1,5 @@
 <!--pages/mine/mine.wxml-->
-<import src="../../template/serviceItem.wxml"/>
+<import src="../../template/serviceItem.wxml" />
 
 <scroll-view>
   <view class='profile'>
@@ -48,8 +48,10 @@
     </template>
     <view class='divider'></view>
 
-    <template is="serviceItem" data="{{icon: '../../asset/btn/qiye.png', name: '企业入住'}}">
-    </template>
+    <navigator url='/pages/regcompany/regcompany'>
+      <template is="serviceItem" data="{{icon: '../../asset/btn/qiye.png', name: '企业入住'}}">
+      </template>
+    </navigator>
     <view class='divider'></view>
 
     <template is="serviceItem" data="{{icon: '../../asset/btn/about.png', name: '关于程序'}}">

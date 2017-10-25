@@ -1,0 +1,40 @@
+<!--pages/regcompany/regcompany.wxml-->
+<view class='page'>
+  <view class='logo-container'>
+    <view>
+      <image src='../../asset/btn/qiye.png' class='qiye-logo'></image>
+    </view>
+    <view class='welcome-container'>
+      <text class='welcome'>欢迎入住</text>
+    </view>
+  </view>
+
+  <form bindsubmit='doSubmit'>
+    <view class='form-container'>
+      <view class='cell'>
+        <text class='label-font'>企业名称</text>
+        <view style='width: 65%'><input name="name" class='input-font' placeholder-class='input-placeholder' placeholder='企业名称' maxlength='16' value="{{name}}"></input></view>
+      </view>
+
+      <view class='cell'>
+        <text class='label-font'>企业电话</text>
+        <view style='width: 65%'><input name="phone" type="number" maxlength='11' class='input-font' placeholder-class='input-placeholder' placeholder='手机或固话带区号' value="{{phone}}"></input></view>
+      </view>
+
+      <view class='cell'>
+        <text class='label-font'>详细地址</text>
+        <view style='width: 65%'><input name="address" class='input-font' placeholder-class='input-placeholder' placeholder='详细地址' maxlength='32' value="{{address}}"></input></view>
+      </view>
+
+      <view class='cell'>
+        <text class='label-font'>企业简介</text>
+        <textarea name="intro" class="input-font" style='height: 200rpx;' maxlength='100' placeholder='简要的介绍企业的主营业务，服务范围等。限100字以内，必填' placeholder-class='input-placeholder' value="{{intro}}"></textarea>
+      </view>
+
+    </view>
+
+    <view class='btn-area'>
+      <button form-type='submit' type='primary' plain='true'>提交审核</button>
+    </view>
+  </form>
+</view>

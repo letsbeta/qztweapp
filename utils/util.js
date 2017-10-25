@@ -1,4 +1,5 @@
 const endpoint = 'https://qzt.letsbeta.com';
+
 const headers = {
   'content-type': 'application/json', // 默认值
   'X-App-Key': 'itisreallyhard2guess!',
@@ -54,6 +55,28 @@ function promptNetworkNotConnect() {
   });
 }
 
+//判断对象为空
+function isEmptyObject(obj) {
+  for (var n in obj) {
+    return false
+  }
+  return true;
+}
+
+//跳转到补全信息
+function jumpToProfile() {
+  wx.showModal({
+    title: '提示',
+    content: '请先补全个人信息',
+    showCancel: false,
+    success: res => {
+      wx.navigateTo({
+        url: '/pages/userprofile/userprofile',
+      });
+    }
+  })
+}
+
 function get(url) {
   return new Promise((resolve, reject) => {
     wx.request({
@@ -102,6 +125,8 @@ module.exports = {
   truncTime: truncTime,
   promptNetworkIssue: promptNetworkIssue,
   promptNetworkNotConnect: promptNetworkNotConnect,
+  jumpToProfile: jumpToProfile,
+  isEmptyObject: isEmptyObject,
   get: get,
   post: post,
   showConfirm: showConfirm

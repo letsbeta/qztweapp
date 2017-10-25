@@ -18,7 +18,14 @@ App({
                 console.log('save dbUserInfo to local storage');
                 wx.setStorageSync('dbUserInfo', res.data);
               }
-            })
+            });
+            //获取用户公司信息
+            common.get('/api/yourcompany/'+res.data.openid+'/').then(res => {
+              if (res.statusCode == 200) {
+                console.log('save company info to local storage');
+                wx.setStorageSync('companyInfo', res.data);
+              }
+            });
           }
         })
       }
