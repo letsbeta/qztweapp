@@ -10,7 +10,8 @@ Page({
     'name': '',
     'phone': '',
     'address': '',
-    'intro': ''
+    'intro': '',
+    'status': 0,
   
   },
 
@@ -38,7 +39,8 @@ Page({
         name: company.name,
         phone: company.phone,
         address: company.address,
-        intro: company.intro
+        intro: company.intro,
+        status: company.status
       });
     }
   

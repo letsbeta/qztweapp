@@ -5,7 +5,9 @@
       <image src='../../asset/btn/qiye.png' class='qiye-logo'></image>
     </view>
     <view class='welcome-container'>
-      <text class='welcome'>欢迎入住</text>
+      <text wx:if="{{status == 0}}" class='welcome' style='color:black;'>欢迎入住</text>
+      <text wx:if="{{status == 1}}" class='welcome' style='color:red;'>审核中...</text>
+      <text wx:if="{{status == 2}}" class='welcome' style='color:green;'>审核通过</text>
     </view>
   </view>
 
@@ -34,7 +36,7 @@
     </view>
 
     <view class='btn-area'>
-      <button form-type='submit' type='primary' plain='true'>提交审核</button>
+      <button form-type='submit' type='primary' plain='true' disabled='{{status == 1 ? true : false}}'>提交审核</button>
     </view>
   </form>
 </view>
