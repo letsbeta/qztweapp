@@ -10,6 +10,7 @@
       </view>
       <view class='welcome-container'>
         <text class='welcome' style='color:black;'>新增职位</text>
+        <text class='hint'>点击图标查看已发布职位</text>
       </view>
     </view>
 

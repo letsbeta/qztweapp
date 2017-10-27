@@ -27,6 +27,13 @@
   justify-content: center;
 }
 
+.welcome-container .hint {
+  font-size: 25rpx;
+  color: lightgray;
+  padding-left: 20rpx;
+  padding-top: 8rpx;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
