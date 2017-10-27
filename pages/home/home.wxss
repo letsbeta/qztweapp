@@ -5,3 +5,15 @@
   width: 100%;
   height: 300rpx;
 }
+
+.loadmore {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rpx;
+}
+
+.loadmore .content {
+  font-size: 20rpx;
+  color: lightgray;
+  text-align: center;
+}

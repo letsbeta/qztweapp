@@ -1,5 +1,5 @@
 <!--pages/home/home.wxml-->
-<import src="../../template/jobCard.wxml"/>
+<import src="../../template/jobCard.wxml" />
 
 <view class='page'>
   <view>
@@ -12,9 +12,13 @@
     </swiper>
   </view>
 
-<block wx:for="{{jobs}}" wx:key="id">
-  <template is="jobCard" data="{{...item}}">
-  </template>
-</block>
+  <block wx:for="{{jobs}}" wx:key="id">
+    <template is="jobCard" data="{{...item}}">
+    </template>
+  </block>
+
+  <view class='loadmore'>
+    <text class='content'>加载更多...</text>
+  </view>
 
 </view>

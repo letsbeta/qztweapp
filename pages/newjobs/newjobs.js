@@ -7,7 +7,58 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isRegister: true,
+    myjobs: []
   
+  },
+
+  /**
+   * 用户自定义函数
+   */
+
+  showMyJobs: function() {
+    var companyinfo = wx.getStorageSync('companyInfo') || {};
+    if (common.isEmptyObject(companyinfo)) {
+      return;
+    }
+    this.setData({ isRegister: false });
+    common.get('/api/yourjobs/'+companyinfo.id).then(res => {
+      if (res.statusCode == 200) {
+        this.setData({myjobs: res.data});
+        console.log(res.data);
+        wx.setNavigationBarTitle({title: '我发布的职位'});
+      }
+      else {
+        console.log('failed to get your company info');
+        common.promptNetworkIssue();
+      }
+    }).catch(res => {
+      common.promptNetworkNotConnect();
+    })
+  },
+
+  toggleSwitch: function(e) {
+    var jobid = e.currentTarget.dataset.id;
+    common.post('/api/jobstatus/'+jobid+'/', {'status': 0}).then(res => {
+      if (res.statusCode == 200) {
+        console.log('job close success');
+        //pop the closed job
+        var jobs = this.data.myjobs;
+        for (var i = 0; i < jobs.length; i++) {
+          if (jobs[i].id == jobid) {
+            jobs.splice(i, 1);
+            console.log(jobs);
+            this.setData({ myjobs: jobs});
+            break;
+          }
+        }
+      }
+      else {
+        common.promptNetworkIssue();
+      }
+    }).catch(res => {
+      common.promptNetworkNotConnect();
+    });
   },
 
   /**
@@ -74,6 +125,10 @@ Page({
     var companyinfo = wx.getStorageSync('companyInfo') || {};
     if (common.isEmptyObject(companyinfo)) {
       common.showConfirm('请先完成企业入住或加入到现有企业');
+      return;
+    }
+    if (companyinfo.status != 2) {
+      common.showConfirm('您的企业尚未通过审核');
       return;
     }
     if (e.detail.value.name.length == 0) {

@@ -1,7 +1,7 @@
 <template name="candidateCard">
   <view class='card'>
     <view class='avatar-container'>
-      <image class='avatar' src="{{avatar}}"></image>
+      <image class='avatar' src="{{avatar}}" data-phone="{{phone}}" bindtap='tabMakePhoneCall'></image>
     </view>
 
     <view class='body'>

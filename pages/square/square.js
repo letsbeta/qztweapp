@@ -77,6 +77,14 @@ Page({
     console.log(e.detail.value);
   },
 
+  tabMakePhoneCall: function(e) {
+    var phone = e.currentTarget.dataset.phone;
+    console.log('call ' + phone);
+    wx.makePhoneCall({
+      phoneNumber: phone,
+    })
+  },
+
 
   /**
    * 页面加载和下拉刷新时调用，回去最新的用户信息

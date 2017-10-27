@@ -1,68 +1,84 @@
 <!--pages/newjobs/newjobs.wxml-->
+<import src="../../template/jobCard.wxml" />
+
 <view class='page'>
 
-  <view class='logo-container'>
-    <view>
-      <image src='../../asset/btn/job.png' class='job-logo'></image>
-    </view>
-    <view class='welcome-container'>
-      <text class='welcome' style='color:black;'>新增职位</text>
-    </view>
-  </view>
-
-  <form bindsubmit='doSubmit'>
-
-    <view class='form-container'>
-      <view class='cell'>
-        <text class='label-font'>招聘企业</text>
-        <view style='width: 65%'>
-          <input name="name" class='input-font' placeholder-class='input-placeholder' placeholder='示例：雅迪电动车厂' maxlength='16'></input>
-        </view>
+  <block wx:if="{{isRegister}}">
+    <view class='logo-container'>
+      <view>
+        <image src='../../asset/btn/job.png' class='job-logo' bindtap='showMyJobs'></image>
       </view>
-
-      <view class='cell'>
-        <text class='label-font'>薪资待遇</text>
-        <view class="multiple">
-          <input name="low" class='input-font' placeholder-class='input-placeholder' placeholder='最低' maxlength='16' type='number'></input>
-          <view style='vertical-align: middle;'><text class="input-font" style="padding-left: 20rpx; padding-right: 80rpx">至</text></view>
-          <input name="high" class='input-font' placeholder-class='input-placeholder' placeholder='最高' maxlength='16' type='number'></input>
-        </view>
+      <view class='welcome-container'>
+        <text class='welcome' style='color:black;'>新增职位</text>
       </view>
-
-      <view class='cell'>
-        <text class='label-font'>所在地区</text>
-        <view class="multiple">
-          <input name="city" class='input-font' placeholder-class='input-placeholder' placeholder='市，如无锡' maxlength='16' type='number'></input>
-          <view style='vertical-align: middle;'><text class="input-font" style="padding-left: 20rpx; padding-right: 80rpx">/</text></view>
-          <input name="district" class='input-font' placeholder-class='input-placeholder' placeholder='区，如新区' maxlength='16' type='number'></input>
-        </view>
-      </view>
-
-      <view class='cell'>
-        <text class='label-font'>职位工种</text>
-        <view style='width: 65%'>
-          <input name="title" class='input-font' placeholder-class='input-placeholder' placeholder='示例：搬运工、操作员等' maxlength='16'></input>
-        </view>
-      </view>
-
-      <view class='cell'>
-        <text class='label-font'>联系电话</text>
-        <view style='width: 65%'>
-          <input name="phone" class='input-font' placeholder-class='input-placeholder' placeholder='默认为发布职位企业的电话' maxlength='16'></input>
-        </view>
-      </view>
-
-      <view class='cell'>
-        <text class='label-font'>职位描述</text>
-        <textarea name="intro" class="input-font" style='height: 200rpx;' maxlength='100' placeholder='简要的描述下该职位，尽量言简意赅，力求吸引人。100字以内' placeholder-class='input-placeholder'></textarea>
-      </view>
-
     </view>
 
-    <view class='btn-area'>
-      <button form-type='submit' type='primary' plain='true'>提交职位</button>
-    </view>
 
-  </form>
+    <form bindsubmit='doSubmit'>
+
+      <view class='form-container'>
+        <view class='cell'>
+          <text class='label-font'>招聘企业</text>
+          <view style='width: 65%'>
+            <input name="name" class='input-font' placeholder-class='input-placeholder' placeholder='示例：雅迪电动车厂' maxlength='16'></input>
+          </view>
+        </view>
+
+        <view class='cell'>
+          <text class='label-font'>薪资待遇</text>
+          <view class="multiple">
+            <input name="low" class='input-font' placeholder-class='input-placeholder' placeholder='最低' maxlength='16' type='number'></input>
+            <view style='vertical-align: middle;'>
+              <text class="input-font" style="padding-left: 20rpx; padding-right: 80rpx">至</text>
+            </view>
+            <input name="high" class='input-font' placeholder-class='input-placeholder' placeholder='最高' maxlength='16' type='number'></input>
+          </view>
+        </view>
+
+        <view class='cell'>
+          <text class='label-font'>所在地区</text>
+          <view class="multiple">
+            <input name="city" class='input-font' placeholder-class='input-placeholder' placeholder='市，如无锡' maxlength='16' type='number'></input>
+            <view style='vertical-align: middle;'>
+              <text class="input-font" style="padding-left: 20rpx; padding-right: 80rpx">/</text>
+            </view>
+            <input name="district" class='input-font' placeholder-class='input-placeholder' placeholder='区，如新区' maxlength='16' type='number'></input>
+          </view>
+        </view>
+
+        <view class='cell'>
+          <text class='label-font'>职位工种</text>
+          <view style='width: 65%'>
+            <input name="title" class='input-font' placeholder-class='input-placeholder' placeholder='示例：搬运工、操作员等' maxlength='16'></input>
+          </view>
+        </view>
+
+        <view class='cell'>
+          <text class='label-font'>联系电话</text>
+          <view style='width: 65%'>
+            <input name="phone" class='input-font' placeholder-class='input-placeholder' placeholder='默认为发布职位企业的电话' maxlength='16'></input>
+          </view>
+        </view>
+
+        <view class='cell'>
+          <text class='label-font'>职位描述</text>
+          <textarea name="intro" class="input-font" style='height: 200rpx;' maxlength='100' placeholder='简要的描述下该职位，尽量言简意赅，力求吸引人。100字以内' placeholder-class='input-placeholder'></textarea>
+        </view>
+
+      </view>
+
+      <view class='btn-area'>
+        <button form-type='submit' type='primary' plain='true'>提交职位</button>
+      </view>
+
+    </form>
+  </block>
+
+  <block wx:if="{{!isRegister}}">
+    <block wx:for="{{myjobs}}" wx:key="id">
+      <template is="jobCard2" data="{{...item}}">
+      </template>
+    </block>
+  </block>
 
 </view>
