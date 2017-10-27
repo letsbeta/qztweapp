@@ -47,7 +47,7 @@ Page({
         for (var i = 0; i < jobs.length; i++) {
           if (jobs[i].id == jobid) {
             jobs.splice(i, 1);
-            console.log(jobs);
+            //console.log(jobs);
             this.setData({ myjobs: jobs});
             break;
           }
