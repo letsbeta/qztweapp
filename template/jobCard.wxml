@@ -2,22 +2,22 @@
   <view class='card'>
     <view class='card-job-title'>
       <view class='left'>
-        <text class='name'>{{company}}</text>
+        <text class='name'>{{name}}</text>
       </view>
       <view class='right'>
-        <text class='salary'>{{salaryMin}} - {{salaryMax}}元</text>
+        <text class='salary'>{{low}} - {{high}}元</text>
       </view>
     </view>
     <view class='card-job-type'>
-      <text class='job-name'>{{jobName}}  /  {{city}}-{{district}}</text>
+      <text class='job-name'>{{title}}  /  {{city}}-{{district}}</text>
     </view>
     <view class='card-job-desc'>
-      <text class='desc'>{{desc}}</text>
+      <text class='desc'>{{intro}}</text>
     </view>
     <view class='card-job-footer'>
       <view class='left'>
-        <text class='pub'>{{by}} @ {{date}}</text>
-        <text class='tel'>{{tel}}</text>
+        <text class='pub'>{{by_company}} @ {{short_date}}</text>
+        <text class='tel'>{{phone}}</text>
       </view>
       <button size='mini' type='primary' plain='true'>申请</button>
     </view>

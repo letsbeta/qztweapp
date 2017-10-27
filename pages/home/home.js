@@ -20,65 +20,81 @@ Page({
     jobs: [
       {
         id: 1,
-        company: '安能物流',
-        salaryMin: 4000,
-        salaryMax: 6000,
-        jobName: '搬运工',
+        name: '安能物流',
+        low: 4000,
+        high: 6000,
+        title: '搬运工',
         city: '无锡',
         district: '新区',
-        desc: '环境好，待遇优。提供住宿，公司食堂。工资月结。好机会不等人，欲投从速。',
-        by: '顶呱呱劳务',
-        tel: '0510-88888888',
-        date: '2017-10-13'
+        intro: '环境好，待遇优。提供住宿，公司食堂。工资月结。好机会不等人，欲投从速。',
+        by_company: '顶呱呱劳务',
+        phone: '0510-88888888',
+        short_date: '2017-10-13'
       },
       {
         id: 2,
-        company: '绿点精密厂',
-        salaryMin: 5000,
-        salaryMax: 8000,
-        jobName: '操作员',
+        name: '绿点精密厂',
+        low: 5000,
+        high: 8000,
+        title: '操作员',
         city: '无锡',
         district: '新区',
-        desc: '环境好，待遇优。提供住宿，公司食堂。工资月结。好机会不等人，欲投从速。',
-        by: '顶呱呱劳务',
-        tel: '0510-88888888',
-        date: '2017-10-12'
+        intro: '环境好，待遇优。提供住宿，公司食堂。工资月结。好机会不等人，欲投从速。',
+        by_company: '顶呱呱劳务',
+        phone: '0510-88888888',
+        short_date: '2017-10-12'
       },
       {
         id: 3,
-        company: '绿点塑胶厂',
-        salaryMin: 5000,
-        salaryMax: 8000,
-        jobName: '操作员',
+        name: '绿点塑胶厂',
+        low: 5000,
+        high: 8000,
+        title: '操作员',
         city: '无锡',
         district: '新区',
-        desc: '环境好，待遇优。提供住宿，公司食堂。工资月结。好机会不等人，欲投从速。',
-        by: '顶呱呱劳务',
-        tel: '0510-88888888',
-        date: '2017-10-11'
-      },
-      {
-        id: 4,
-        company: '绿点塑胶厂',
-        salaryMin: 5000,
-        salaryMax: 8000,
-        jobName: '操作员',
-        city: '无锡',
-        district: '新区',
-        desc: '环境好，待遇优。提供住宿，公司食堂。工资月结。好机会不等人，欲投从速。',
-        by: '顶呱呱劳务',
-        tel: '0510-88888888',
-        date: '2017-10-11'
+        intro: '环境好，待遇优。提供住宿，公司食堂。工资月结。好机会不等人，欲投从速。',
+        by_company: '顶呱呱劳务',
+        phone: '0510-88888888',
+        short_date: '2017-10-11'
       }
     ]
+  },
 
+  fetchLatestJobsInfo: function (q = '', append = false) {
+    common.get('/api/jobs' + q).then(res => {
+      if (res.statusCode == 200) {
+        var jobs = res.data.jobs;
+        var next = res.data.next;
+        console.log(jobs);
+        this.setData({
+          next: next
+        });
+        if (append) {
+          this.setData({
+            jobs: this.data.jobs.concat(jobs)
+          })
+        }
+        else {
+          this.setData({
+            jobs: jobs
+          })
+        }
+      }
+      else {
+        console.log('get jobs list failed');
+        common.promptNetworkIssue();
+      }
+    }).catch(res => {
+      common.promptNetworkNotConnect();
+    });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log('home page loaded');
+    this.fetchLatestJobsInfo();
   },
 
   /**
