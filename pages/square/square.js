@@ -188,5 +188,19 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  /**
+   * 用户自定义函数
+   */
+  gotoDetail: function (e) {
+    var openid = e.currentTarget.dataset.openid;
+    var id = e.currentTarget.dataset.id;
+    console.log('detail for openid ' + openid + ' userid ' + id);
+    var query = '?userid='+id;
+    console.log(query);
+    wx.navigateTo({
+      url: '/pages/peopledetail/peopledetail'+query,
+    });
   }
 })

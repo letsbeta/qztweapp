@@ -6,7 +6,8 @@
     "pages/userprofile/userprofile",
     "pages/regcompany/regcompany",
     "pages/newjobs/newjobs",
-    "pages/clients/clients"
+    "pages/clients/clients",
+    "pages/peopledetail/peopledetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -4,7 +4,7 @@
       <image class='avatar' src="{{avatar}}" data-phone="{{phone}}" bindtap='tabMakePhoneCall'></image>
     </view>
 
-    <view class='body'>
+    <view class='body' data-openid="{{openid}}" data-id="{{id}}" bindtap='gotoDetail'>
       <view class='first-line'>
         <view style='width: 80%'>
           <text class='name'>{{name}}</text>
