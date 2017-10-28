@@ -1,0 +1,29 @@
+<!--pages/clients/clients.wxml-->
+<import src="/bower_components/zanui-weapp/dist/field/index.wxml" />
+
+<view class="container">
+
+  <view class="zan-panel">
+    <form bindsubmit='doSubmit'>
+      <view class="zan-cell zan-field">
+        <view class="zan-cell__hd zan-field__title">添加客户</view>
+        <input name="name" type="text" placeholder="请输入客户名称" class="zan-field__input zan-cell__bd" maxlength='24' value='{{client_name}}'/>
+        <view class="zan-cell__ft">
+          <button form-type='submit' class="zan-btn zan-btn--mini zan-btn--primary">确认添加</button>
+        </view>
+      </view>
+    </form>
+  </view>
+
+  <view class="zan-panel-title">现有客户</view>
+  <view class="zan-panel">
+  <block wx:for="{{clients}}" wx:key="id">
+    <view class='zan-cell'>
+      <view class='zan-cell__bd'>{{item.name}}</view>
+      <view class="zan-cell__ft">
+      <button class="zan-btn zan-btn--mini zan-btn--warn" data-id='{{item.id}}' bindtap='onDelete'>删除</button>
+      </view>
+    </view>
+    </block>
+  </view>
+</view>

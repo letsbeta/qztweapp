@@ -1,0 +1,22 @@
+{
+  "name": "zanui-weapp",
+  "authors": [
+    "Nino <ninofocus@gmail.com>",
+    "Pangxie <pangxie@youzan.com>"
+  ],
+  "directory": "zanui-weapp",
+  "description": "A UI Library for Weapp",
+  "main": "zan",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "example",
+    "build",
+    "assets",
+    ".github",
+    "app.*",
+    "*.md",
+    "*.log"
+  ]
+}

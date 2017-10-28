@@ -5,7 +5,8 @@
     "pages/mine/mine",
     "pages/userprofile/userprofile",
     "pages/regcompany/regcompany",
-    "pages/newjobs/newjobs"
+    "pages/newjobs/newjobs",
+    "pages/clients/clients"
   ],
   "window": {
     "backgroundTextStyle": "light",

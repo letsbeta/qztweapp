@@ -1,7 +1,8 @@
 /**app.wxss**/
 @import "weui-searchbar.wxss";
+@import "bower_components/zanui-weapp/dist/index.wxss";
 
-.container {
+/**.container {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -9,10 +10,10 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-}
+}*/
 
 /*from weui wxss*/
-page{
+page {
     background-color: #F8F8F8;
     font-size: 16px;
     font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;

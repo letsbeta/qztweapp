@@ -46,9 +46,11 @@
     </template>
     <view class='divider'></view>
 
+    <navigator url='/pages/clients/clients'>
     <template is="serviceItem" data="{{icon: '../../asset/btn/kehu.png', name: '我的客户'}}">
     </template>
     <view class='divider'></view>
+    </navigator>
 
     <navigator url='/pages/regcompany/regcompany'>
       <template is="serviceItem" data="{{icon: '../../asset/btn/qiye.png', name: '企业入住'}}">

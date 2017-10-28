@@ -57,7 +57,7 @@
         <view class='cell'>
           <text class='label-font'>联系电话</text>
           <view style='width: 65%'>
-            <input name="phone" class='input-font' placeholder-class='input-placeholder' placeholder='默认为发布职位企业的电话' maxlength='16'></input>
+            <input name="phone" class='input-font' placeholder-class='input-placeholder' placeholder='默认为发布职位企业的电话' maxlength='16' type='number'></input>
           </view>
         </view>
 
