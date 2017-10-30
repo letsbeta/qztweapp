@@ -17,53 +17,43 @@
 
     <form bindsubmit='doSubmit'>
 
-      <view class='form-container'>
-        <view class='cell'>
-          <text class='label-font'>招聘企业</text>
-          <view style='width: 65%'>
-            <input name="name" class='input-font' placeholder-class='input-placeholder' placeholder='示例：雅迪电动车厂' maxlength='16'></input>
+      <view class='zan-panel'>
+        <view class='zan-cell zan-field'>
+          <view class='zan-cell__hd zan-field__title label-color'>招聘企业</view>
+          <input name="name" class='zan-field__input zan-cell__bd' placeholder='示例：雅迪电动车厂' maxlength='16'></input>
+        </view>
+
+        <view class='zan-cell zan-field'>
+          <view class='zan-cell__hd zan-field__title label-color'>薪资待遇</view>
+          <view class="zan-field__input zan-cell__bd flex-row">
+            <input name="low" class='zan-field__input' placeholder='最低' maxlength='16' type='number'></input>
+            <input class='zan-field__input' value='至' disabled='true'></input>
+            <input name="high" class='zan-field__input' placeholder='最高' maxlength='16' type='number'></input>
           </view>
         </view>
 
-        <view class='cell'>
-          <text class='label-font'>薪资待遇</text>
-          <view class="multiple">
-            <input name="low" class='input-font' placeholder-class='input-placeholder' placeholder='最低' maxlength='16' type='number'></input>
-            <view style='vertical-align: middle;'>
-              <text class="input-font" style="padding-left: 20rpx; padding-right: 80rpx">至</text>
-            </view>
-            <input name="high" class='input-font' placeholder-class='input-placeholder' placeholder='最高' maxlength='16' type='number'></input>
+        <view class='zan-cell zan-field'>
+          <view class='zan-cell__hd zan-field__title label-color'>所在地区</view>
+          <view class="zan-field__input zan-cell__bd flex-row">
+            <input name="city" class='zan-field__input' placeholder='市，如无锡' maxlength='16' type='number'></input>
+            <input class='zan-field__input' value='/' disabled='true'></input>
+            <input name="district" class='zan-field__input' placeholder='区，如新区' maxlength='16' type='number'></input>
           </view>
         </view>
 
-        <view class='cell'>
-          <text class='label-font'>所在地区</text>
-          <view class="multiple">
-            <input name="city" class='input-font' placeholder-class='input-placeholder' placeholder='市，如无锡' maxlength='16' type='number'></input>
-            <view style='vertical-align: middle;'>
-              <text class="input-font" style="padding-left: 20rpx; padding-right: 80rpx">/</text>
-            </view>
-            <input name="district" class='input-font' placeholder-class='input-placeholder' placeholder='区，如新区' maxlength='16' type='number'></input>
-          </view>
+        <view class='zan-cell zan-field'>
+          <view class='zan-cell__hd zan-field__title label-color'>职位管理</view>
+          <input name="title" class='zan-field__input zan-cell__bd' placeholder='示例：搬运工、操作员等' maxlength='16'></input>
         </view>
 
-        <view class='cell'>
-          <text class='label-font'>职位工种</text>
-          <view style='width: 65%'>
-            <input name="title" class='input-font' placeholder-class='input-placeholder' placeholder='示例：搬运工、操作员等' maxlength='16'></input>
-          </view>
+        <view class='zan-cell zan-field'>
+          <view class='zan-cell__hd zan-field__title label-color'>联系电话</view>
+          <input name="phone" class='zan-field__input zan-cell__bd' placeholder='手机或固话带区号' maxlength='16' type='number'></input>
         </view>
 
-        <view class='cell'>
-          <text class='label-font'>联系电话</text>
-          <view style='width: 65%'>
-            <input name="phone" class='input-font' placeholder-class='input-placeholder' placeholder='默认为发布职位企业的电话' maxlength='16' type='number'></input>
-          </view>
-        </view>
-
-        <view class='cell'>
-          <text class='label-font'>职位描述</text>
-          <textarea name="intro" class="input-font" style='height: 200rpx;' maxlength='100' placeholder='简要的描述下该职位，尽量言简意赅，力求吸引人。100字以内' placeholder-class='input-placeholder'></textarea>
+        <view class='zan-cell zan-field'>
+          <view class='zan-cell__hd zan-field__title label-color'>职位描述</view>
+          <textarea name="intro" class="zan-field__input zan-cell__bd" style='height: 200rpx;' maxlength='100' placeholder='简要的描述下该职位，尽量言简意赅，力求吸引人。100字以内'></textarea>
         </view>
 
       </view>
