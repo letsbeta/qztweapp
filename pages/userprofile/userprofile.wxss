@@ -13,43 +13,8 @@
   padding: 15rpx;
 }
 
-.form-container {
-  margin-top: 50rpx;
-  border: 1rpx solid #e0e0e0;
-}
-
-.form-container .cell {
-  margin: 20rpx;
-  display: flex;
-  flex-direction: row;
-  border-bottom: 1rpx solid #e0e0e0;
-  vertical-align: middle;
-  padding-bottom: 10rpx;
-}
-
-.label-font {
-  font-size: 30rpx;
+.label-color {
   color: rgb(19, 121, 189);
-  width: 25%;
-}
-
-.input-font {
-  font-size: 30rpx;
-  color: rgb(44, 47, 58);
-}
-
-.input-placeholder {
-  font-size: 30rpx;
-  color: lightgray;
-}
-
-.form-container .cell:last-child {
-  border-bottom: 0rpx;
-}
-
-.form-container .cell .vertical-align {
-  display: flex;
-  flex-direction: column;
 }
 
 .noicon-check{

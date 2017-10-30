@@ -6,40 +6,40 @@
 
   <!--信息录入表单-->
   <form bindsubmit='doSubmit'>
-    <view class='form-container'>
-      <view class='cell'>
-        <text class='label-font'>姓名</text>
-        <input name="name" value="{{name}}" class='input-font' placeholder='请输入姓名' placeholder-class='input-placeholder' maxlength='4'></input>
+    <view class='zan-panel'>
+      <view class='zan-cell zan-field'>
+        <view class='zan-cell__hd zan-field__title label-color'>姓名</view>
+        <input name="name" value="{{name}}" class='zan-field__input zan-cell__bd' placeholder='请输入姓名' maxlength='4'></input>
       </view>
 
-      <view class='cell'>
-        <text class='label-font'>手机</text>
-        <input name="phone" value="{{phone}}" type="number" class='input-font' placeholder='请输入手机号' placeholder-class='input-placeholder' maxlength='11'></input>
+      <view class='zan-cell zan-field'>
+        <view class='zan-cell__hd zan-field__title label-color'>手机</view>
+        <input name="phone" value="{{phone}}" type="number" class='zan-field__input zan-cell__bd' placeholder='请输入手机号' maxlength='11'></input>
       </view>
 
-      <view class='cell'>
-        <text class='label-font'>生日</text>
+      <view class='zan-cell zan-field'>
+        <view class='zan-cell__hd zan-field__title label-color'>生日</view>
         <picker name="birthday" mode="date" value="{{birthday}}" start="1950-01-01" end="2050-12-31" bindchange="bindDateChange">
-          <view class="input-font">{{birthday}}</view>
+          <view class="zan-field__input zan-cell__bd">{{birthday}}</view>
         </picker>
       </view>
 
-      <view class='cell'>
-        <text class='label-font'>性别</text>
+      <view class='zan-cell zan-field'>
+        <view class='zan-cell__hd zan-field__title label-color'>性别</view>
         <radio-group name="genderx" bindchange="radioChange">
-          <label class='vertical-align' wx:for="{{genders}}" wx:key="value">
+          <label wx:for="{{genders}}" wx:key="value">
             <radio class="noicon-check" value="{{item.value}}" checked="{{item.checked}}" />
             <view class='check-text-with-icon'>
-              <text space='emsp' class='input-font'>{{item.name+appendSpace}}</text>
+              <text space='emsp' class='zan-field__input zan-cell__bd'>{{item.name+appendSpace}}</text>
               <icon wx:if="{{item.checked}}" type="success_no_circle" size="16"></icon>
             </view>
           </label>
         </radio-group>
       </view>
 
-      <view class='cell'>
-        <text class='label-font'>简介</text>
-        <textarea name="intro" value="{{intro}}" class="input-font" style='height: 200rpx;' maxlength='50' placeholder='自我介绍，比如工作经历，擅长的技能等。50字以内' placeholder-class='input-placeholder'></textarea>
+      <view class='zan-cell zan-field'>
+        <view class='zan-cell__hd zan-field__title label-color'>简介</view>
+        <textarea name="intro" value="{{intro}}" class="zan-field__input zan-cell__bd" style='height: 200rpx;' maxlength='50' placeholder='自我介绍，比如工作经历，擅长的技能等。50字以内'></textarea>
       </view>
 
     </view>
