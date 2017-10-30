@@ -13,25 +13,25 @@
   </view>
 
   <form bindsubmit='doSubmit'>
-    <view class='form-container'>
-      <view class='cell'>
-        <text class='label-font'>企业名称</text>
-        <view style='width: 65%'><input name="name" class='input-font' placeholder-class='input-placeholder' placeholder='企业名称' maxlength='16' value="{{name}}"></input></view>
+    <view class='zan-panel'>
+      <view class='zan-cell zan-field'>
+        <view class='zan-cell__hd zan-field__title label-color'>企业名称</view>
+        <input name="name" class='zan-field__input zan-cell__bd' placeholder='企业名称' maxlength='16' value="{{name}}"></input>
       </view>
 
-      <view class='cell'>
-        <text class='label-font'>企业电话</text>
-        <view style='width: 65%'><input name="phone" type="number" maxlength='11' class='input-font' placeholder-class='input-placeholder' placeholder='手机或固话带区号' value="{{phone}}"></input></view>
+      <view class='zan-cell zan-field'>
+        <view class='zan-cell__hd zan-field__title label-color'>企业电话</view>
+        <input name="phone" type="number" maxlength='11' class='zan-field__input zan-cell__bd' placeholder='手机或固话带区号' value="{{phone}}"></input>
       </view>
 
-      <view class='cell'>
-        <text class='label-font'>详细地址</text>
-        <view style='width: 65%'><input name="address" class='input-font' placeholder-class='input-placeholder' placeholder='详细地址' maxlength='32' value="{{address}}"></input></view>
+      <view class='zan-cell zan-field'>
+        <view class='zan-cell__hd zan-field__title label-color'>详细地址</view>
+        <input name="address" class='zan-field__input zan-cell__bd' placeholder='详细地址' maxlength='32' value="{{address}}"></input>
       </view>
 
-      <view class='cell'>
-        <text class='label-font'>企业简介</text>
-        <textarea name="intro" class="input-font" style='height: 200rpx;' maxlength='100' placeholder='简要的介绍企业的主营业务，服务范围等。限100字以内，必填' placeholder-class='input-placeholder' value="{{intro}}"></textarea>
+      <view class='zan-cell zan-field'>
+        <view class='zan-cell__hd zan-field__title label-color'>企业简介</view>
+        <textarea name="intro" class="zan-field__input zan-cell__bd" style='height: 200rpx;' maxlength='100' placeholder='简要的介绍企业的主营业务，服务范围等。限100字以内，必填' value="{{intro}}"></textarea>
       </view>
 
     </view>
