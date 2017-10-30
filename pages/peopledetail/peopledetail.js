@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: '秦时月'
+    name: '秦时月',
+    area: ['绿点科技', '雅迪电动车', '新伟科技'],
+    areaIndex: 0
   
   },
 
@@ -63,5 +65,14 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+
+  /**
+   * 用户自定义函数
+   */
+  onAreaChange: function(e) {
+    this.setData({
+      areaIndex: e.detail.value
+    });
+  },
 })
