@@ -14,6 +14,7 @@ Page({
     persons: [
       {
         id: 1,
+        openid: 0,
         avatar: '../../asset/avatar/male.png',
         name: '张三',
         age: 28,
@@ -24,6 +25,7 @@ Page({
       },
       {
         id: 2,
+        openid: 0,
         avatar: '../../asset/avatar/male.png',
         name: '李四',
         age: 32,
@@ -34,6 +36,7 @@ Page({
       },
       {
         id: 3,
+        openid: 0,
         avatar: '../../asset/avatar/male.png',
         name: '王五',
         age: 32,
@@ -43,7 +46,7 @@ Page({
         update_at: '10-12'
       }
     ]
-  
+
   },
 
   /**
@@ -77,7 +80,7 @@ Page({
     console.log(e.detail.value);
   },
 
-  tabMakePhoneCall: function(e) {
+  tabMakePhoneCall: function (e) {
     var phone = e.currentTarget.dataset.phone;
     console.log('call ' + phone);
     wx.makePhoneCall({
@@ -91,8 +94,8 @@ Page({
    * q: query string: ?offset=10
    */
 
-  fetchLatestUserInfo: function (q, append=false) {
-    common.get('/api/users'+q).then(res => {
+  fetchLatestUserInfo: function (q, append = false) {
+    common.get('/api/users' + q).then(res => {
       if (res.statusCode == 200) {
         var users = res.data.users;
         var next = res.data.next;
@@ -139,28 +142,28 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
@@ -170,7 +173,7 @@ Page({
     console.log('pull down refresh triggered.');
     this.fetchLatestUserInfo('');
     wx.stopPullDownRefresh();
-  
+
   },
 
   /**
@@ -187,20 +190,26 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   },
 
   /**
    * 用户自定义函数
    */
   gotoDetail: function (e) {
+    console.log(e.currentTarget.dataset);
     var openid = e.currentTarget.dataset.openid;
     var id = e.currentTarget.dataset.id;
+    var name = e.currentTarget.dataset.name;
+    var age = e.currentTarget.dataset.age;
+    var gender = e.currentTarget.dataset.gender;
+    var phone = e.currentTarget.dataset.phone;
     console.log('detail for openid ' + openid + ' userid ' + id);
-    var query = '?userid='+id;
-    console.log(query);
+
+    var query = '?userid=' + id + '&openid=' + openid + '&name=' + name + '&age=' + age + '&gender=' + gender + '&phone=' + phone;
+    
     wx.navigateTo({
-      url: '/pages/peopledetail/peopledetail'+query,
+      url: '/pages/peopledetail/peopledetail' + query,
     });
   }
 })

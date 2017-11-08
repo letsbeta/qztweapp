@@ -4,7 +4,7 @@
       <image class='avatar' src="{{avatar}}" data-phone="{{phone}}" bindtap='tabMakePhoneCall'></image>
     </view>
 
-    <view class='body' data-openid="{{openid}}" data-id="{{id}}" bindtap='gotoDetail'>
+    <view class='body' data-openid="{{openid}}" data-id="{{id}}" data-name="{{name}}" data-age="{{age}}" data-gender="{{gender == 1 ? '男' : '女'}}" data-phone="{{phone}}" bindtap='gotoDetail'>
       <view class='first-line'>
         <view style='width: 80%'>
           <text class='name'>{{name}}</text>

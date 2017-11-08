@@ -1,4 +1,6 @@
 // pages/peopledetail/peopledetail.js
+const common = require('../../utils/util.js');
+
 Page({
 
   /**
@@ -15,7 +17,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options);
     this.setData({userid: options.userid});
+    this.setData({name: options.name,
+      age: options.age,
+      phone: options.phone,
+      gender: options.gender,
+      openid: options.openid});
   },
 
   /**
@@ -75,4 +83,27 @@ Page({
       areaIndex: e.detail.value
     });
   },
+
+  addToCompany: function(e) {
+    var openid = e.currentTarget.dataset.openid;
+    var companyinfo = wx.getStorageSync('companyInfo') || {};
+    if (common.isEmptyObject(companyinfo)) {
+      return;
+    }
+    var data = {
+      'company_id': companyinfo.id,
+      'openid': openid
+    }
+    console.log(data);
+    common.post('/api/userjoin', data).then(res => {
+      if (res.statusCode == 200) {
+        common.showConfirm('添加成功', false);
+      }
+      else {
+        common.showConfirm('添加失败', false);
+      }
+    }).catch(res => {
+      common.promptNetworkNotConnect();
+    })
+  }
 })
