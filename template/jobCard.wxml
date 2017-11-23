@@ -19,7 +19,7 @@
         <text class='pub'>{{by_company}} @ {{short_date}}</text>
         <text class='tel'>{{phone}}</text>
       </view>
-      <button size='mini' type='primary' plain='true'>申请</button>
+      <button size='mini' type='primary' plain='true' data-id='{{id}}' bindtap='applyJob'>申请</button>
     </view>
   </view>
 </template>

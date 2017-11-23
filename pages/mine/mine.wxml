@@ -20,32 +20,37 @@
 
   <view class='service-container'>
 
+  <!--
     <template is="serviceItem" data="{{icon: '../../asset/btn/shenqing.png', name: '我的申请'}}">
     </template>
     <view class='divider'></view>
-
+  -->
+  <!--
     <template is="serviceItem" data="{{icon: '../../asset/btn/zhiding.png', name: '提升排名'}}">
     </template>
     <view class='divider'></view>
-
+  -->
+  <!--
     <template is="serviceItem" data="{{icon: '../../asset/btn/todo.png', name: '待办事项'}}">
     </template>
     <view class='divider'></view>
-
+  -->
     <navigator url='/pages/newjobs/newjobs'>
     <template is="serviceItem" data="{{icon: '../../asset/btn/job.png', name: '职位管理'}}">
     </template>
     <view class='divider'></view>
     </navigator>
 
+  <!--
     <template is="serviceItem" data="{{icon: '../../asset/btn/yuangong.png', name: '我的员工'}}">
     </template>
     <view class='divider'></view>
-
+  -->
+  <!--
     <template is="serviceItem" data="{{icon: '../../asset/btn/zhigong.png', name: '我的职工'}}">
     </template>
     <view class='divider'></view>
-
+  -->
     <navigator url='/pages/clients/clients'>
     <template is="serviceItem" data="{{icon: '../../asset/btn/kehu.png', name: '我的客户'}}">
     </template>
@@ -58,8 +63,10 @@
     </navigator>
     <view class='divider'></view>
 
+    <navigator url='/pages/about/about'>
     <template is="serviceItem" data="{{icon: '../../asset/btn/about.png', name: '关于程序'}}">
     </template>
+    </navigator>
     <view class='divider'></view>
 
   </view>

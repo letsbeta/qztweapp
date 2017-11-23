@@ -151,5 +151,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  applyJob: function(e) {
+    console.log('apply job id ' + e.currentTarget.dataset.id);
+    common.showConfirm('申请成功', false);
   }
 })

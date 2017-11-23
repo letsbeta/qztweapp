@@ -1,0 +1,7 @@
+/* pages/about/about.wxss */
+
+.aboutbox {
+  margin: 20rpx;
+  display: flex;
+  flex-direction: column;
+}

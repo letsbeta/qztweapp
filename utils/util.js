@@ -40,7 +40,7 @@ function promptNetworkIssue() {
   wx.showToast({
     title: '网络异常',
     icon: 'loading',
-    duration: 3000,
+    duration: 2000,
     mask: true
   });
 }
@@ -50,7 +50,7 @@ function promptNetworkNotConnect() {
   wx.showToast({
     title: '没有网络',
     icon: 'loading',
-    duration: 3000,
+    duration: 2000,
     mask: true
   });
 }

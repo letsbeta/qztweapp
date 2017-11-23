@@ -1,8 +1,9 @@
 .card {
   border: 1rpx solid #e0e0e0;
-  border-radius: 0rpx;
-  box-shadow: 5rpx 5rpx 5rpx #e0e0e0;
+  border-radius: 5rpx;
+  box-shadow: 0 0 5rpx #e0e0e0;
   margin: 10rpx;
+  opacity: 0.9;
 }
 
 .card .card-job-title {
@@ -68,13 +69,13 @@
 }
 
 .card .card-job-footer .left .tel {
-  color: darkgreen;
+  color: darkcyan;
   font-size: 24rpx;
   padding-left: 10rpx;
 }
 
 .card .card-job-footer .pub {
-  color: pink;
+  color: #e0e0e0;
   font-size: 24rpx;
   padding-left: 10rpx;
   padding-top: 5rpx;
