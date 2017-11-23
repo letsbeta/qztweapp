@@ -4,19 +4,19 @@ const common = require('../../utils/util.js');
 
 Page({
   data: {
-    Loadinghidden:true
+    Loadinghidden: true
   },
   onLoad: function () {
     var that = this;
     that.loadWeather();
   },
-  refresh: function() {
+  refresh: function () {
     this.loadWeather();
   },
-  loadWeather: function() {
+  loadWeather: function () {
     var that = this;
     that.setData({
-      Loadinghidden:false
+      Loadinghidden: false
     });
     var weather = {};
     var typeIcon = {
@@ -46,11 +46,11 @@ Page({
       "晴": "background-qing"
     };
     wx.getLocation({
-      success: function(res) {
+      success: function (res) {
         var latitude = res.latitude;
         var longitude = res.longitude;
         console.log(latitude + ', ' + longitude);
-        common.get('/api/location?latitude=' + latitude + '&longitude='+longitude).then(res => {
+        common.get('/api/location?latitude=' + latitude + '&longitude=' + longitude).then(res => {
           var city = res.data.result.addressComponent.city;
           weather.city = city;
           console.log('city=' + city);
